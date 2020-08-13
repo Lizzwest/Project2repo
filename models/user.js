@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
+
+  //these are our validations
   user.init({
     name: {
       type:DataTypes.STRING,
@@ -45,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'user',
   });
-
+//checks before running function, Takes users password and hashes it 
   user.addHook('beforeCreate', function(pendingUser){
     //hash password for us
     let hash = bcrypt.hashSync(pendingUser.password, 12);
