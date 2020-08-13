@@ -52,14 +52,14 @@ module.exports = (sequelize, DataTypes) => {
     //hash password for us
     let hash = bcrypt.hashSync(pendingUser.password, 12);
     pendingUser.password = hash;
-    
+  })
     user.prototype.validPassword = function(passwordTyped){
       let correctPassword = bcrypt.compareSync(passwordTyped, this.password)
       //return true or false based on correct password
       return correctPassword;
     }
 
-  })
+ 
 //remove the password before it gets serialized
   user.prototype.toJSON = function() {
     let userData = this.get();
