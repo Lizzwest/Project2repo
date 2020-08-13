@@ -14,10 +14,18 @@ passport.serializeUser((user, cb) => {
 
 // passport deserializeUser is going to take the id and look that up in the databse
 passport.deserializeUser((id, cb)=>{
-cb(null, id)
-.catch(cb());
-});
+// cb(null, id)
+// .catch(cb);
 
+
+db.user.findByPk(id)
+.then(user =>{
+    cb(null, user)
+
+}).catch(cb)
+
+
+});
 passport.use(new localStrategy({
     usernameField: "email",
     passwordField: "password"
@@ -32,6 +40,8 @@ passport.use(new localStrategy({
             cb(null, user)
         }
     })
-    .catch(cb());
+    .catch(cb);
 }
 ))
+
+module.exports = passport;
