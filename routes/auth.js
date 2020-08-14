@@ -34,13 +34,13 @@ router.post('/signup', (req, res) => {
 			} else {
 				//email already exists
         console.log('email already exists');
-        req.flash("Email already exists, PLease try again")
+        req.flash("error","Email already exists, PLease try again")
 				res.redirect('/auth/signup');
 			}
 		})
 		.catch((error) => {
       console.log('Error', error);
-      req.flash("Error unfortunately...")
+      req.flash("error","Error unfortunately...")
 			res.redirect('/auth/signup');
 		});
 });
@@ -59,7 +59,7 @@ router.get(
 	(req,
 	res) => {
     req.logOut();
-    req.flash("see you soon, logging out")
+    req.flash("success", "see you soon, logging out")
 		res.redirect('/');
 	})
 

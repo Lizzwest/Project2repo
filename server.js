@@ -7,6 +7,10 @@ const SECRET_SESSION = process.env.SECRET_SESSION
 const passport = require('./config/ppConfig')
 const flash = require("connect-flash")
 
+//require the auth middleware at the top of the page
+
+const isLoggedIn = require("./middleware/isLoggedIn")
+
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -33,15 +37,15 @@ app.use(flash());
 
 app.use((req, res, next)=>{
   //before every route, we will attach our current user to res.local
-  res.local.alerts = req.flash();
-  res.local.currentUser = req.user;
+  res.locals.alerts = req.flash();
+  res.locals.currentUser = req.user;
   next();
 })
 app.get('/', (req, res) => {
-  res.render('index', {alert: req.flash});
+  res.render('index', {alerts: res.locals.alerts});
 });
 
-app.get('/profile', (req, res) => {
+app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
