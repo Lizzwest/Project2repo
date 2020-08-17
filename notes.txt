@@ -1,0 +1,8 @@
+What do i need to get done?
+Check on api
+nav bar
+layout.ejs
+ask abput forms
+cry
+stress eat
+get my forms to link to my database (tffffff)

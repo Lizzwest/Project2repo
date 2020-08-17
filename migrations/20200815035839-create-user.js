@@ -17,6 +17,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      isChef: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

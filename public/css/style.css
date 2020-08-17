@@ -1,4 +1,4 @@
-nav ul li {
+/* nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
@@ -6,4 +6,56 @@ nav ul li {
 
 h1 {
   color: chartreuse;
+} */
+
+
+body{
+  background-image: url(https://www.nirvelli.com/wp-content/uploads/2014/05/gumlog-darkwood.jpg);
+  /* text-align: right; */
+  font-size: 30px;
 }
+.sidenav-overlay{
+  background: blue;
+  size: 50%;
+}
+.home{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.meal{
+  font-family: 'Noto Serif', serif;
+
+}
+.snack{
+  font-family: 'Oswald', sans-serif;
+}
+.smack{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.map{
+ 
+  margin-left: 10rem;
+  margin-top: 10rem;
+  /* border: 5px solid black; */
+
+  
+}
+
+    .input-fields{
+      background: rgb(236, 236, 137);
+      color:rgb(71, 3, 3);
+    }
+
+    label{
+      color: rgb(148, 147, 147);
+      
+    }
+    #signup{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .link{
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }

@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Authentication</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Noto+Serif:wght@700&family=Oswald&family=Roboto+Condensed&display=swap');
+      </style>
+    <title>Smacks 'n Snacks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
@@ -12,8 +16,8 @@
       <nav>
         <ul>
           <% if(!currentUser) { %>
-            <li><a href="/auth/signup">Signup</a></li>
-            <li><a href="/auth/login">Login</a></li>
+            <li><a class="link" href="/auth/signup">Signup</a></li>
+            <li><a class="link" href="/auth/login">Login</a></li>
          <% } else{%> 
           <li><a href="/auth/logout">Logout</a></li>
           <li><a href="/profile">Profile</a></li>
@@ -23,7 +27,8 @@
         </ul>
       </nav>
     </header>
-    <h1>Authentication</h1>
+    
     <%- body %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
   </body>
 </html>
