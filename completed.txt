@@ -1,0 +1,15 @@
+all my links work from server! yay
+forms for meal plan order
+and sns order completed?
+
+basic layout (with some filler)set up for following pages:
+login
+signup
+mealplan
+sauce
+smacks
+snacks
+about
+contact
+homepage
+

@@ -7,28 +7,47 @@
       @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Noto+Serif:wght@700&family=Oswald&family=Roboto+Condensed&display=swap');
       </style>
     <title>Smacks 'n Snacks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <% include partials/alerts %> 
-    <header>
-      <nav>
-        <ul>
-          <% if(!currentUser) { %>
-            <li><a class="link" href="/auth/signup">Signup</a></li>
-            <li><a class="link" href="/auth/login">Login</a></li>
-         <% } else{%> 
-          <li><a href="/auth/logout">Logout</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <% } %> 
-         
-          
-        </ul>
-      </nav>
-    </header>
+    
+      <div class="main">
+        <h3 class= "logo">Logo will go here</h3>
+      <h1 id="main-title"> Smack's 'n Snacks ('n Sauce) </h1>
+      <!-- <a href="/signup">Click here to create an account</a> -->
+      </br>
+      <!-- <a href="/login">Already a member? Log in here!</a> -->
+    </div>
+    <nav class="navbar"></nav>
+    <!-- <nav>
+      <div class="sidebar">
+        
+<li><a href="/">Go home</a></li>
+<li><a href="/signup">Sign Up here</a></li>
+<li><a href="/login">Login Here</a></li>
+<li><a href="/bbq-sauce">Go to sauce</a></li>
+<li><a href="/smacks">Go to smacks</a></li>
+<li><a href="/snacks">Go to snacks</a></li>
+<li><a href="/mealplans">Go to mealplan</a></li>
+<li><a href="/order-meal-plans">Place a Meal Plan order</a></li>
+<li><a href="/order-smack-n-snack">Place a Smack or Snack order</a></li>
+<li><a href="/delivery">Check for Delivery</a></li>
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/about">About the Chef</a></li>
+    </div>
+  </nav>
+     -->
     
     <%- body %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  -->
+    
+    </br>
+  </br>
+
+  </br></br>
+  <footer class= "footer">Have more questions?</br>
+       put this off to the bottm right side out of the weay as a footer<a href="/contact">Contact Us!</a></footer>
   </body>
 </html>

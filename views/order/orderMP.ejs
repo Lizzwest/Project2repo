@@ -1,0 +1,150 @@
+
+
+<h4>
+    Meal Plan Options
+</h4>
+<h5>
+    $8 per day ($10/ day for salmon option; min. 3 days) OR get 5 days for $35($40 for salmon option)!
+</h5>
+
+<p>For our meal plans, you can choose between 3 and 5 days. Please choose ONE protein for all days. For each day, you 
+    may also choose a side and a vegetable option. You may select different Sides and vegetable options for each day of your meal plan.
+    Please make your selections below.
+</p>
+</br>
+<p>**Should we redirect to a full new order form for delivery or just have them enter their address and name on the delivery page so the chef can have it?</p>
+
+
+<form id="mealplan" action="order/orderMP" method="POST"></form>
+
+<label class= "orderTitle" for="mpOrder">Place a Meal Plan Order</label> </br>
+</br>
+    <label for="name">Customer Name</label>
+    <input class="input-fields" id="name" type="name" name="name" required></br>
+    <label for="email">E-mail</label>
+    <input class="input-fields" id="name" type="name" name="name" required></br>
+    <label for="phone">Phone Number</label>
+    <input class="input-fields" id="name" type="name" name="name"></br>
+</br>
+</br>
+   
+
+    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+
+    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+
+    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+
+    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+    <label for="days">Please select number of days</label>
+    <select id = "input-fields">
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+</br>
+    <label>Please Select ONE Protein</label>
+</br>
+    <select name="protein" id="input-fields">
+      <option  value = "c">Oven Roasted Chicken Breast (8-10oz)</option>
+      <option value = "pc">Pan Seared Chicken Breast (8-10oz)</option>
+      <option value = "b">Beef Barbacoa (6oz)</option>
+      <option value = "p">Portobello Mushroom (3 large caps) * Vegetarian option*</option>
+      <option value = "ps">Pan Seared Salmon(6oz.)**Add $2/day</option>
+      <option value = "s">Oven Roasted Salmon(6oz.)**Add $2/day**</option>
+    </select>
+</br>
+</br>
+<label>Please select Sides and quantity:</label>
+</br>
+   
+      Tri-Color Herbed Pasta
+  
+    <select name="pasta" id = "input-fields">
+        <option value="0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+      
+      Lemon Quinoa
+   
+    <select name= "quinoa" id = "input-fields">
+        <option value="0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+     
+      White Rice
+    
+   
+    <select name= "rice" id = "input-fields">
+        <option value="0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+      Oven Roasted Potatoes
+    
+   
+    <select name = "potatoes"id = "input-fields">
+      <option value="0">0</option>
+      <option value = "1">1</option>
+      <option value = "2">2</option>
+      <option value = "3">3</option>
+      <option value = "4">4</option>
+      <option value = "5">5</option>
+    </select>
+</br>
+</br>
+</br>
+<label>Please select Vegetables and quantity:</label>
+</br>
+   
+      Sautéed Asparagus
+   
+    <select id = "input-fields">
+        <option value="0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+     Oven Roasted Heirloom Carrots
+    <select id = "input-fields">
+      <option value="0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+      </select>
+    </br>
+ Seasonal Vegetable Medley
+  <select id = "input-fields">
+    <option value="0">0</option>
+      <option value = "1">1</option>
+      <option value = "2">2</option>
+      <option value = "3">3</option>
+      <option value = "4">4</option>
+      <option value = "5">5</option>
+    </select>
+      
+</br>
+</br>
+<input type="submit" value="submit">
+<!-- <a href="/">Cancel</a> -->
+</form>

@@ -1,24 +1,21 @@
-/* nav ul li {
-  text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
-}
 
-h1 {
-  color: chartreuse;
-} */
 
 
 body{
   background-image: url(https://www.nirvelli.com/wp-content/uploads/2014/05/gumlog-darkwood.jpg);
+  color:white;}
+
+  a{
+    color:orange;
+  }
   /* text-align: right; */
-  font-size: 30px;
-}
-.sidenav-overlay{
-  background: blue;
-  size: 50%;
-}
-.home{
+  /* font-size: 20px; */
+  /* justify-content: right; */
+  /* align-items: right; */
+/* }
+ a{
+
+/* .home{
   font-family: 'Roboto Condensed', sans-serif;
 }
 .meal{
@@ -34,13 +31,13 @@ body{
 .map{
  
   margin-left: 10rem;
-  margin-top: 10rem;
+  margin-top: 10rem; */
   /* border: 5px solid black; */
 
   
-}
+/* } */
 
-    .input-fields{
+    /* .input-fields{
       background: rgb(236, 236, 137);
       color:rgb(71, 3, 3);
     }
@@ -54,8 +51,52 @@ body{
       align-items: center;
       text-align: center;
     }
+    #login{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
     .link{
       justify-content: center;
       text-align: center;
       align-items: center;
     }
+
+    .main{
+      color:rgb(88, 9, 9);
+      text-align: right;
+      margin-left: 5rem;
+      background: grey;
+      /* margin: 0 auto; */
+
+    /* }
+
+    .logo{
+      margin-left: 10rem;
+      background:rgb(88, 9, 9);
+      height: 300px;
+      width: 300px;
+      
+    }
+   .contianer{
+     background-image: url(https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/26/0/NY0100_neelys-bbq-sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371597847826.jpeg);
+     background-repeat: no-repeat;
+     height: 500px;
+     width:500px;
+     align-items: right;
+     justify-content: right;
+     text-align: right; */ 
+     /* padding-left: 400px;
+     margin-left: 400px; */
+   /* }
+   #sauce-page{
+    text-align: right;
+   }
+   #main-title{
+     text-align: right;
+   }
+
+   .footer{
+     text-align: right;
+   } */

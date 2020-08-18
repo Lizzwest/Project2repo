@@ -1,8 +1,18 @@
 What do i need to get done?
-Check on api
+Check on api(i hate you)
 nav bar
-layout.ejs
-ask abput forms
-cry
-stress eat
-get my forms to link to my database (tffffff)
+layout.ejs(done minus nav and style)
+ask abput forms( may have completed but have to link to database)
+cry(done but leaving on here so i rememebr to keep scheduling time for it)
+stress eat(crap i havent eaten anything)
+get my forms to link to my database (tffffff oh look its so important i wrote it twice)
+
+mapbox api for delivery(STILL HATE YOU)
+  
+
+  logout functionality( how? where did it go?)
+
+  why dont my loinks work from the controllers, only form server
+post routes/ update and delete functionality(delete an account, update password)
+
+delivery page( whats that? oh the FREAKING API)

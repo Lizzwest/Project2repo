@@ -12,13 +12,20 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.mealOrder.belongsTo(models.user)
-    
+
     }
   };
   mealOrder.init({
     userId: DataTypes.INTEGER,
-    mealId: DataTypes.INTEGER,
-    quantity: DataTypes.INTEGER
+    days: DataTypes.INTEGER,
+    protein: DataTypes.STRING,
+    pasta: DataTypes.INTEGER,
+    quinoa: DataTypes.INTEGER,
+    rice: DataTypes.INTEGER,
+    potatoes: DataTypes.INTEGER,
+    asparagus: DataTypes.INTEGER,
+    carrots: DataTypes.INTEGER,
+    medley: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'mealOrder',
