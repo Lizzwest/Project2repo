@@ -102,8 +102,8 @@ app.post('/order/delivery', (req, res)=>{
   console.log(req.body);
   const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
   getLatLon(query, () => {
-	
-    res.render("order/delivery", { msg: "order recieved"});
+	// change by ROME
+    res.render("order/deliveryStatus", { msg: "order recieved"});
   })
   // res.send("order delivery")
 })
