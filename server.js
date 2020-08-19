@@ -101,10 +101,39 @@ app.get('/delivery', (req, res) => {
 app.post('/order/delivery', (req, res)=>{
   console.log(req.body);
   const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
-  getLatLon(query, () => {
-	// change by ROME
-    res.render("order/deliveryStatus", { msg: "order recieved"});
-  })
+
+  geocodingClient
+	.forwardGeocode({
+		query: query
+	})
+	.send()
+	.then((response) => {
+		const match = response.body;
+		// console.log(match);
+		const features = match.features;
+    console.log("feature[0]");
+    console.log(features[0]);
+    const coords= features[0].center
+    const lat = coords[1]
+    const lon= coords[0]
+    console.log(query)
+    let distance = calculateDistanceToFarm(lat,lon)
+
+    res.render("order/deliveryStatus", { msg: "order recieved", distance: distance});
+    cb()
+		// features.forEach((eachPlace) => {
+		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
+		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
+		// 	console.log(city);
+		// 	console.log(state);
+		// });
+	});
+
+
+  // getLatLon(query, () => {
+	// // change by ROME
+  //   res.render("order/deliveryStatus", { msg: "order recieved"});
+  // })
   // res.send("order delivery")
 })
 
@@ -180,45 +209,45 @@ getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", () => {
 });
 
 function getLatLon(query, cb){
-  geocodingClient
-	.forwardGeocode({
-		query: query
-	})
-	.send()
-	.then((response) => {
-		const match = response.body;
-		// console.log(match);
-		const features = match.features;
-    console.log("feature[0]");
-    console.log(features[0]);
-    const coords= features[0].center
-    const lat = coords[1]
-    const lon= coords[0]
-    console.log(query)
-    calculateDistanceToFarm(lat,lon)
+//   geocodingClient
+// 	.forwardGeocode({
+// 		query: query
+// 	})
+// 	.send()
+// 	.then((response) => {
+// 		const match = response.body;
+// 		// console.log(match);
+// 		const features = match.features;
+//     console.log("feature[0]");
+//     console.log(features[0]);
+//     const coords= features[0].center
+//     const lat = coords[1]
+//     const lon= coords[0]
+//     console.log(query)
+//     let distance = calculateDistanceToFarm(lat,lon)
 
-    cb()
-		// features.forEach((eachPlace) => {
-		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
-		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
-		// 	console.log(city);
-		// 	console.log(state);
-		// });
-	});
-}
+//     cb(distance)
+// 		// features.forEach((eachPlace) => {
+// 		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
+// 		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
+// 		// 	console.log(city);
+// 		// 	console.log(state);
+// 		// });
+// 	});
+// }
 
 
 
-geocodingClient
-	.forwardGeocode({
-		query: "Knott's Berry Farm, Buena Park, CA"
-	})
-	.send()
-	.then((response) => {
-		const match = response.body;
-		let featureCoordinates = match.features[0].center;
-		console.log('Querying the coords for Knotts Berry Farm here:', featureCoordinates);
-	});
+// geocodingClient
+// 	.forwardGeocode({
+// 		query: "Knott's Berry Farm, Buena Park, CA"
+// 	})
+// 	.send()
+// 	.then((response) => {
+// 		const match = response.body;
+// 		let featureCoordinates = match.features[0].center;
+// 		console.log('Querying the coords for Knotts Berry Farm here:', featureCoordinates);
+// 	});
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
@@ -252,7 +281,7 @@ function calculateDistanceToFarm(clientLat, clientLon) {
 	console.log(d)
 	return d;
 }
-// })
+}
 
 
 
