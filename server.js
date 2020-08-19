@@ -204,11 +204,11 @@ app.post('/order-smack-n-snack', (req, res)=>{
 });
 
 
-getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", () => {
-	console.log('I am inside of the getLatLon function');
-});
+// getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", () => {
+// 	console.log('I am inside of the getLatLon function');
+// });
 
-function getLatLon(query, cb){
+// function getLatLon(query, cb){
 //   geocodingClient
 // 	.forwardGeocode({
 // 		query: query
@@ -273,14 +273,11 @@ function calculateDistanceToFarm(clientLat, clientLon) {
 	var dLat = x1.toRad();
 	var x2 = farmLon - clientLon;
 	var dLon = x2.toRad();
-	var a =
-		Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-		Math.cos(clientLat.toRad()) * Math.cos(farmLat.toRad()) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(clientLat.toRad()) * Math.cos(farmLat.toRad()) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 	var d = R * c;
 	console.log(d)
 	return d;
-}
 }
 
 
