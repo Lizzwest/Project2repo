@@ -118,9 +118,24 @@ app.post('/order/delivery', (req, res)=>{
     const lon= coords[0]
     console.log(query)
     let distance = calculateDistanceToFarm(lat,lon)
+    let msg;
+    if(distance < 15.9325){
+      msg = "Order Recieved! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery"
+    }else if(distance < 24.1402 && distance > 15.9325){
+      msg = " Order Recieved! You qualify for $5 delivery! We will reach out within 48 hours to confirm date and time of delivery "
 
-    res.render("order/deliveryStatus", { msg: "order recieved", distance: distance});
+    }else if(distance > 24.1402 && distance < 26.2 ){
+      msg = " Order Recieved! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery "
+    }else{
+      msg = "We are sorry, we don't currently deliver to this area. We will reach out to schedule a pick up time or to cancel your order."
+    }
+      
+
+    res.render("order/deliveryStatus", { msg: msg});
     cb()
+
+
+    
 		// features.forEach((eachPlace) => {
 		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
 		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
