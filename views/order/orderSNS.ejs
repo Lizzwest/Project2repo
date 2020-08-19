@@ -1,5 +1,5 @@
 
-<form id="mealplan" action="order/orderMP" method="POST"></form>
+<form id="smacknsnack" action="/order-smack-n-snack" method="POST">
 
 <label class= "orderTitle" for="snsOrder">Place a Smack 'n Snack Order</label> 
 </br>
@@ -7,22 +7,15 @@
     <label for="name">Customer Name</label>
     <input class="input-fields" id="name" type="name" name="name" required></br>
     <label for="email">E-mail</label>
-    <input class="input-fields" id="name" type="name" name="name" required></br>
+    <input class="input-fields" id="name" type="email" name="email" required></br>
     <label for="phone">Phone Number</label>
-    <input class="input-fields" id="name" type="name" name="name"></br>
+    <input class="input-fields" id="name" type="number" name="number"></br>
    
 
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
-
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
-
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
-
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
 </br>
 <label>Cheesecake:
     </br> Please select flavor</label>
-    <select class="input-fields">
+    <select name = "cheesecake" class="input-fields">
       <option value = "mnc">Milk 'n Cookies</option>
       <option value = "oc">Orange Creamsicle</option>
       <option value = "cnc">Cookies 'n Cream</option>
@@ -32,13 +25,13 @@
     </select>
   </br>
 </br>
-    <label for="">Please select a size and quantity:</label>
+    <label>Please select a size and quantity:</label>
   </br>
 </br>
     
 
         Slice ($5)
-        <select id = "input-fields">
+        <select name="slice" class= "input-fields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -49,7 +42,7 @@
       </br>
         
        8 in. ($35)
-       <select id = "input-fields">
+       <select name = "eight" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -59,7 +52,7 @@
       </select>
     </br>
         10 in. ($40)
-        <select id = "input-fields">
+        <select name = "ten" class= "input-fields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -69,7 +62,7 @@
         </select>
       </br>
         12 in. ($45)
-        <select id = "input-fields">
+        <select name= "twelve" class= "input-fields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -85,7 +78,7 @@
     <label>Granola (6 oz. Bag)</label>
 </br>
     
-    <select id = "input-fields">
+    <select name= "granola" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -99,7 +92,7 @@
     <label>Chef's Special BBQ Sauce ($5/ bottle)</label>
   </br>
       
-      <select id = "input-fields">
+      <select name= "bbq" class = "input-fields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -108,3 +101,5 @@
           <option value = "5">5</option>
         </select>
       </br>
+      <input type="submit" value="submit">
+      </form>

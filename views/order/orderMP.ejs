@@ -15,16 +15,16 @@
 <p>**Should we redirect to a full new order form for delivery or just have them enter their address and name on the delivery page so the chef can have it?</p>
 
 
-<form id="mealplan" action="order/orderMP" method="POST"></form>
+<form id="mealplan" action="/order-meal-plans" method="POST">
 
 <label class= "orderTitle" for="mpOrder">Place a Meal Plan Order</label> </br>
 </br>
     <label for="name">Customer Name</label>
     <input class="input-fields" id="name" type="name" name="name" required></br>
     <label for="email">E-mail</label>
-    <input class="input-fields" id="name" type="name" name="name" required></br>
+    <input class="input-fields" id="name" type="email" name="email" required></br>
     <label for="phone">Phone Number</label>
-    <input class="input-fields" id="name" type="name" name="name"></br>
+    <input class="input-fields" id="name" type="number" name="number"></br>
 </br>
 </br>
    
@@ -37,7 +37,7 @@
 
     <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
     <label for="days">Please select number of days</label>
-    <select id = "input-fields">
+    <select name="days" required class= "input-fields">
         <option value = "3">3</option>
         <option value = "4">4</option>
         <option value = "5">5</option>
@@ -61,7 +61,7 @@
    
       Tri-Color Herbed Pasta
   
-    <select name="pasta" id = "input-fields">
+    <select name="pasta" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -73,7 +73,7 @@
       
       Lemon Quinoa
    
-    <select name= "quinoa" id = "input-fields">
+    <select name= "quinoa" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -86,7 +86,7 @@
       White Rice
     
    
-    <select name= "rice" id = "input-fields">
+    <select name= "rice" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -98,7 +98,7 @@
       Oven Roasted Potatoes
     
    
-    <select name = "potatoes"id = "input-fields">
+    <select name = "potatoes"class= "input-fields">
       <option value="0">0</option>
       <option value = "1">1</option>
       <option value = "2">2</option>
@@ -114,7 +114,7 @@
    
       Sautéed Asparagus
    
-    <select id = "input-fields">
+    <select name="asparagus" class= "input-fields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -124,7 +124,7 @@
       </select>
     </br>
      Oven Roasted Heirloom Carrots
-    <select id = "input-fields">
+    <select name= "carrots" class= "input-fields">
       <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -134,7 +134,7 @@
       </select>
     </br>
  Seasonal Vegetable Medley
-  <select id = "input-fields">
+  <select name= "medley" class= "input-fields">
     <option value="0">0</option>
       <option value = "1">1</option>
       <option value = "2">2</option>

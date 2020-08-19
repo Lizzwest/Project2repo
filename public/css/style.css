@@ -1,13 +1,50 @@
+ 
+:root{
+  font-size: 21px;
+  /* --text-primary: orange;
+  --text-secondary: blue;
+  --bg-primary: white;
+  --bg-secondary: yellow; */
+  
 
-
-
+}
+ #main-title{
+  text-align: right;
+  font-size: 45px;
+}
+option{
+  color:blue;
+}
+a{
+  color:red;
+  font-size: 25px;
+  
+}
+.pie1{
+  height:200px;
+  width:200px;
+}
 body{
-  background-image: url(https://www.nirvelli.com/wp-content/uploads/2014/05/gumlog-darkwood.jpg);
-  color:white;}
+  /* background-image: url(https://www.nirvelli.com/wp-content/uploads/2014/05/gumlog-darkwood.jpg); */
+  /* color:white; */
+  /* text-align: center;  */
+}
 
-  a{
+  
+/* } */
+/* .navbar-fixed{
+  display: flex;
+  flex-direction: column;
+}
+   */
+/* 
+  {
     color:orange;
-  }
+  } */
+  /* footer{ */
+    /* margin-top: 100%; */
+    /* text-align: right; */
+  /* } */
   /* text-align: right; */
   /* font-size: 20px; */
   /* justify-content: right; */
@@ -99,4 +136,4 @@ body{
 
    .footer{
      text-align: right;
-   } */
+   } */ 

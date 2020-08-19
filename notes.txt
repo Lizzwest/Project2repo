@@ -16,3 +16,10 @@ mapbox api for delivery(STILL HATE YOU)
 post routes/ update and delete functionality(delete an account, update password)
 
 delivery page( whats that? oh the FREAKING API)
+
+<%if(msg){ %>
+   <%=msg %>
+<% } %>
+
+
+have ejs tell user if they are in the delivery radius 

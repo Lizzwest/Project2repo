@@ -31,6 +31,8 @@ db.user.findOrCreate({
       medley:0
     
     },
+
+  
     
 
   }).then(function(mealOrder, created) {
