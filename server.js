@@ -99,10 +99,11 @@ app.get('/delivery', (req, res) => {
 });
 
 app.post('/order/delivery', (req, res)=>{
-  console.log(req.body)
-  const query= [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
-  getLatLon(query, () =>{
-    res.render("order/delivery", {msg: "order recieved"})
+  console.log(req.body);
+  const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
+  getLatLon(query, () => {
+	
+    res.render("order/delivery", { msg: "order recieved"});
   })
   // res.send("order delivery")
 })
@@ -171,8 +172,13 @@ app.post('/order-smack-n-snack', (req, res)=>{
     // res.status(400).render('error not found')
     res.send(JSON.stringify(error))
   })
-})
-getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", ()=>{})
+});
+
+
+getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", () => {
+	console.log('I am inside of the getLatLon function');
+});
+
 function getLatLon(query, cb){
   geocodingClient
 	.forwardGeocode({
@@ -211,7 +217,7 @@ geocodingClient
 	.then((response) => {
 		const match = response.body;
 		let featureCoordinates = match.features[0].center;
-		console.log(featureCoordinates);
+		console.log('Querying the coords for Knotts Berry Farm here:', featureCoordinates);
 	});
 
 const port = process.env.PORT || 3000;
@@ -219,9 +225,11 @@ const server = app.listen(port, () => {
 	console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
 
+// Functions after the server
 Number.prototype.toRad = function() {
 	return this * Math.PI / 180;
 };
+
 // calculateDistanceToFarm(33.812511,-117.918976)
 function calculateDistanceToFarm(clientLat, clientLon) {
 	// -117.997072, 33.843075437500005
@@ -241,7 +249,7 @@ function calculateDistanceToFarm(clientLat, clientLon) {
 		Math.cos(clientLat.toRad()) * Math.cos(farmLat.toRad()) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 	var d = R * c;
-console.log(d)
+	console.log(d)
 	return d;
 }
 // })
