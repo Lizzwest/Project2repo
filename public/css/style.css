@@ -13,6 +13,11 @@
   
 
 }
+.navbar-nav{
+  border:solid 6px;
+  align-items: center;
+  border-radius: 20%;
+}
 .homeMain{
 
 }
@@ -102,7 +107,7 @@ body{
   /* text-align: center;  */
 }
 #link{
-  font-size:16px;
+  font-size:28px;
   font-weight: bolder;
 
   color:rgb(59, 34, 34)

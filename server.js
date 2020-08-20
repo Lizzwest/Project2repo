@@ -100,10 +100,9 @@ app.get('/delivery', (req, res) => {
 });
 
 app.post('/order/delivery', (req, res)=>{
-  console.log(req.body);
+  // console.log(req.body);
   let email = req.body["delivery-email"]
   const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
-
   geocodingClient
 	.forwardGeocode({
 		query: query
@@ -113,48 +112,46 @@ app.post('/order/delivery', (req, res)=>{
 		const match = response.body;
 		// console.log(match);
 		const features = match.features;
-    console.log("feature[0]");
-    console.log(features[0]);
+    // console.log("feature[0]");
+    // console.log(features[0]);
     const coords= features[0].center
     const lat = coords[1]
     const lon= coords[0]
-    console.log(query)
+    // console.log(query)
     let distance = calculateDistanceToFarm(lat,lon)
-    let msg;
-    if(distance < 15.9325){
-      msg = "Order Recieved! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery"
-    }else if(distance < 24.1402 && distance > 15.9325){
-      msg = " Order Recieved! You qualify for $5 delivery! We will reach out within 48 hours to confirm date and time of delivery "
-
-    }else if(distance > 24.1402 && distance < 26.2 ){
-      msg = " Order Recieved! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery "
-    }else{
-      msg = "We are sorry, we don't currently deliver to this area. We will reach out to schedule a pick up time or to cancel your order."
-    }
-      
+    let msg = sendMessage(distance)
 
     res.render("order/deliveryStatus", { msg: msg, email: email});
-    cb()
 
-
-    
-		// features.forEach((eachPlace) => {
-		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
-		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
-		// 	console.log(city);
-		// 	console.log(state);
-		// });
-	});
-
-
-  // getLatLon(query, () => {
-	// // change by ROME
-  //   res.render("order/deliveryStatus", { msg: "order recieved"});
-  // })
-  // res.send("order delivery")
+  });
+  
 })
 
-//async await
+app.post("/order/delivery-update", (req, res)=>{
+  let email = req.body["delivery-email"]
+  const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
+  geocodingClient
+	.forwardGeocode({
+		query: query
+	})
+	.send()
+	.then((response) => {
+		const match = response.body;
+		// console.log(match);
+		const features = match.features;
+    // console.log("feature[0]");
+    // console.log(features[0]);
+    const coords= features[0].center
+    const lat = coords[1]
+    const lon= coords[0]
+    // console.log(query)
+    let distance = calculateDistanceToFarm(lat,lon)
+    let msg = sendMessage(distance)
+
+    res.render("order/deliveryStatus", { msg: msg, email: email});
+
+  });
+})
 
 app.get('/contact', (req, res) => {
 	res.render('main/contact');
@@ -220,38 +217,10 @@ app.post('/order-smack-n-snack', (req, res)=>{
   })
 });
 
+// app.post("/order/delivery-update")
 
-// getLatLon("Del Lago Elementary, Mission Viejo, Ca, 92691", () => {
-// 	console.log('I am inside of the getLatLon function');
-// });
 
-// function getLatLon(query, cb){
-//   geocodingClient
-// 	.forwardGeocode({
-// 		query: query
-// 	})
-// 	.send()
-// 	.then((response) => {
-// 		const match = response.body;
-// 		// console.log(match);
-// 		const features = match.features;
-//     console.log("feature[0]");
-//     console.log(features[0]);
-//     const coords= features[0].center
-//     const lat = coords[1]
-//     const lon= coords[0]
-//     console.log(query)
-//     let distance = calculateDistanceToFarm(lat,lon)
 
-//     cb(distance)
-// 		// features.forEach((eachPlace) => {
-// 		// 	let city = eachPlace.place_name.split(',', [ 0 ]);
-// 		// 	let state = eachPlace.place_name.split(',', [ 1 ]);
-// 		// 	console.log(city);
-// 		// 	console.log(state);
-// 		// });
-// 	});
-// }
 
 
 
@@ -310,6 +279,22 @@ app.delete("/homepage", async (req, res) => {
     res.render("error");
   }
 });
+
+
+function sendMessage(distance) {
+  let msg;
+  if(distance < 15.9325){
+      msg = "Order Recieved! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery"
+    }else if(distance < 24.1402 && distance > 15.9325){
+      msg = " Order Recieved! You qualify for $5 delivery! We will reach out within 48 hours to confirm date and time of delivery "
+    }else if(distance > 24.1402 && distance < 26.2 ){
+      msg = " Order Recieved! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery "
+    }else{
+      msg = "We are sorry, we don't currently deliver to this area. We will reach out to schedule a pick up time or to cancel your order."
+    }
+    return msg;
+}
+console.log(sendMessage(15.888));
 
 
 // module.exports = server
