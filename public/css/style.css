@@ -1,36 +1,129 @@
  
 :root{
-  font-size: 21px;
+  /* font-size: 21px; */
   /* --text-primary: orange;
   --text-secondary: blue;
   --bg-primary: white;
   --bg-secondary: yellow; */
+  /* text-align: right; */
+  font-weight:bolder;
+  /* display:flex; */
+  /* flex-direction: row; */
+  
   
 
 }
- #main-title{
+.homeMain{
+
+}
+.homeRight{
+  align-items: right;
+  justify-content: end;
   text-align: right;
+
+}
+.smackRight{
+  align-items: right;
+  justify-content: end;
+  text-align: right;
+}
+.homeDown{
+
+}
+#login{
+  
+  text-align: center;
+}
+.loginButton{
+  font-size: 18px;;
+}
+#signup{
+  
+  text-align: center;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color:rgb(59, 34, 34);
+  /* background-image: url(https://c1.wallpaperflare.com/preview/352/453/127/wood-background-texture-neutral.jpg); */
+  background-color: #230903;
+background-image: linear-gradient(315deg, #551c0f 0%, #d3b88c 74%);
+
+
+}
+ #main-title{
+  text-align: center;
   font-size: 45px;
 }
 option{
   color:blue;
 }
 a{
-  color:red;
-  font-size: 25px;
+  color:rgb(59, 34, 34)
+
+}
+a:hover{
+  color:	#707459;
+  font-size: 18px;
   
 }
 .pie1{
-  height:200px;
-  width:200px;
+  height:250px;
+  width:250px;
+  border-radius: 30%;
+  border-color: rgb(59, 34, 34);
+  border: solid 5px;
+}
+.mp1{
+  
+    height:350px;
+    width:350px;
+    border-radius: 30%;
+    border-color: rgb(59, 34, 34);
+    border: solid 5px;
+  
+}
+.pie2{
+  height:350px;
+  width:350px;
+  border-radius: 30%;
+  border-color: rgb(59, 34, 34);
+  border: solid 5px;
 }
 body{
   /* background-image: url(https://www.nirvelli.com/wp-content/uploads/2014/05/gumlog-darkwood.jpg); */
   /* color:white; */
   /* text-align: center;  */
 }
+#link{
+  font-size:16px;
+  font-weight: bolder;
 
+  color:rgb(59, 34, 34)
+}
+#link:hover{
+  color:#5f614f
+}
+   .input-fields{
+      background: 	#707459;
+      color:rgb(59, 34, 34);
+      border-radius: 10%;
+    }
+input{
+  color:rgb(59, 34, 34);
+  background:#707459;
+  border-radius: 10%;
+}
   
+.submit{
+  border-radius: 10%;
+}
 /* } */
 /* .navbar-fixed{
   display: flex;

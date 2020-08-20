@@ -1,1 +1,6 @@
 <p><%= msg %></p>
+<form action="/order/delivery" method="POST">
+    <input type="text" name="email" id="email" value="<%= email %>"hidden>
+    <button type="submit">Change Address?</button>
+</form>
+<!-- gotta figure out the update route. right now it says email is not defined but whyyyyy -->

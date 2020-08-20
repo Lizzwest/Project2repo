@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.user.hasMany(models.sOsOrder)
       models.user.hasMany(models.mealOrder)
+      models.user.hasOne(models.address)
     }
   };
   user.init({

@@ -10,6 +10,7 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const geocodingClient = mbxGeocoding({ accessToken: MAPBOX_ACCESS_TOKEN });
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
+const methodOverride = require("method-override");
 //let moment = require('moment')
 
 //require the auth middleware at the top of the page
@@ -100,6 +101,7 @@ app.get('/delivery', (req, res) => {
 
 app.post('/order/delivery', (req, res)=>{
   console.log(req.body);
+  let email = req.body["delivery-email"]
   const query = [req.body["delivery-address"], req.body["delivery-city"], req.body["delivery-zip"]].join(",")
 
   geocodingClient
@@ -131,7 +133,7 @@ app.post('/order/delivery', (req, res)=>{
     }
       
 
-    res.render("order/deliveryStatus", { msg: msg});
+    res.render("order/deliveryStatus", { msg: msg, email: email});
     cb()
 
 
@@ -295,6 +297,19 @@ function calculateDistanceToFarm(clientLat, clientLon) {
 	return d;
 }
 
+
+app.delete("/homepage", async (req, res) => {
+  try {
+    await db.user.destroy({
+      where: {
+        userId: req.user.dataValues.id,
+      },
+    });
+    res.redirect("/");
+  } catch (error) {
+    res.render("error");
+  }
+});
 
 
 // module.exports = server

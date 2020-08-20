@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light " >
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% if (!currentUser) { %>
+            <a class="nav-link" id= "link"href="/">Home</a>
+            <a class="nav-link" id= "link" href="/signup">Sign Up</a>
+            <a class="nav-link" id= "link" href="/login">Login</a>
+            <a class="nav-link" id= "link" href="/smacks">Smacks</a>
+            <a class="nav-link" id= "link" href="/snacks">'n Snacks</a>
+            <a class="nav-link" id= "link" href="/bbq-sauce">'n Sauce</a>
+            <a class="nav-link" id= "link" href="/order-smack-n-snack">Smack 'n Snack Order</a>
+            <a class="nav-link" id= "link" href="/mealplans">Meal Plans</a>
+            <a class="nav-link" id= "link" href="/order-meal-plans">Meal Plan Order</a>
+            <a class="nav-link" id= "link" href="/delivery">Delivery</a>
+            <a class="nav-link" id= "link" href="/contact">Contact</a>
+            <a class="nav-link" id= "link" href="/about">Chef D</a>
+          <% } else { %>
+            <a class="nav-link" id= "link" href="/">Home</a>
+            <a class="nav-link" id= "link" href="/signup">Sign Up</a>
+            <a class="nav-link" id= "link" href="/auth/logout">Logout</a>
+            <a class="nav-link" id= "link" href="/smacks">Smacks</a>
+        <a class="nav-link" id= "link" href="/snacks">'n Snacks</a>
+        <a class="nav-link" id= "link" href="/bbq-sauce">'n Sauce</a>
+        <a class="nav-link" id= "link" href="/order-smack-n-snack">Smack 'n Snack Order</a>
+        <a class="nav-link" id= "link" href="/mealplans">Meal Plans</a>
+        <a class="nav-link" id= "link" href="/order-meal-plans">Meal Plan Order</a>
+        <a class="nav-link" id= "link" href="/delivery">Delivery</a>
+        <a class="nav-link" id= "link" href="/contact">Contact</a>
+        <a class="nav-link" id= "link" href="/about">Chef D</a>
+            
+          <% } %> 
+       
+        
+      </div>
+    </div>
+  </nav>
+  
+
+     
+
