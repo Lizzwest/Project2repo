@@ -16,6 +16,6 @@
     "database": "smacks_n_snacks_final",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "use_env_variable":"postgres://nhdgayolvavceo:f48424d5e72d984b391d32a18c5e8e8cd874da62f528f6dfa7f331fe91ebfe86@ec2-52-22-94-132.compute-1.amazonaws.com:5432/d2pghi7ea21tbb"
+    "use_env_variable":"DATABASE_URL"
   }
 }
