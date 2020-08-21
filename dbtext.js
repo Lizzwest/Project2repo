@@ -56,3 +56,24 @@ db.user.findOrCreate({
       console.log(sOsOrder);
   })
 
+
+
+  db.address.findOrCreate({
+    where:{
+      // userId: req.user.id,
+      // email: req.body.email,
+      // name: req.body.name,
+      // address: req.body.address,
+      // city: req.body.city,
+      // zip: req.body.zip
+      // email: "lizwesterband@gmail.com",
+      userId: 1,
+      address: "21851 camargo",
+      city: "Mission Viejo",
+      zip: 92691
+
+  }
+}).then(function(address, created) {
+  console.log(address); // returns info about the user
+})
+  
