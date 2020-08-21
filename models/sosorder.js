@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
   };
   sOsOrder.init({
     userId: DataTypes.INTEGER,
-    days: DataTypes.INTEGER,
     cheesecakeFlavor: DataTypes.STRING,
     slice: DataTypes.INTEGER,
     eight: DataTypes.INTEGER,

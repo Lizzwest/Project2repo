@@ -1,4 +1,6 @@
- 
+ *{
+   outline: 1px dotted red;
+ }
 :root{
   /* font-size: 21px; */
   /* --text-primary: orange;
@@ -236,3 +238,30 @@ input{
    .footer{
      text-align: right;
    } */ 
+
+   @media(max-width:500px){
+     #main-title{
+       font-size:30px;
+     }
+     .homeMain{
+       width: 90%;
+       min-width: 300px;
+       margin: 0 auto;
+       
+     }
+     .homepageHeader{
+       font-size: 15px;
+     }
+     .pie1{
+       width: 50%;
+       height:150px;
+     }
+     .describe{
+       font-size: 12px;
+     }
+     .mp1{
+      width: 50%;
+       height:150px;
+     }
+     }
+   

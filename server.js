@@ -59,10 +59,10 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
-// app.use('/thegrub', require('./controllers/food'))
-// // app.use('/order', require('./controllers/order'))
-// app.use('/owner', require('./controllers/owner'))
-// // app.use('/smacks-n-snacks', require('./controllers/main'))
+app.use('/', require('./controllers/food'))
+app.use('/', require('./controllers/order'))
+app.use('/', require('./controllers/owner'))
+app.use('/', require('./controllers/main'))
 
 //
 
@@ -74,36 +74,42 @@ app.get('/signup', (req, res) => {
 	res.render('auth/signup');
 });
 
-app.get('/mealplans', (req, res) => {
-	res.render('food/mealPlan');
-});
-app.get('/bbq-sauce', (req, res) => {
-	res.render('food/sauce');
-});
-app.get('/smacks', (req, res) => {
-	res.render('food/smacks');
-});
+// app.get('/mealplans', (req, res) => {
+// 	res.render('food/mealPlan');
+// });
+// app.get('/bbq-sauce', (req, res) => {
+// 	res.render('food/sauce');
+// });
+// app.get('/smacks', (req, res) => {
+// 	res.render('food/smacks');
+// });
 
-app.get('/snacks', (req, res) => {
-	res.render('food/snacks');
-});
-app.get('/order-meal-plans', (req, res) => {
-	res.render('order/orderMP');
-});
-app.get('/order-smack-n-snack', (req, res) => {
-	res.render('order/orderSNS');
-});
+// app.get('/snacks', (req, res) => {
+// 	res.render('food/snacks');
+// });
+// app.get('/order-meal-plans', (req, res) => {
+// 	res.render('order/orderMP');
+// });
+// app.get('/order-smack-n-snack', (req, res) => {
+// 	res.render('order/orderSNS');
+// });
 
-app.get('/delivery', (req, res) => {
-	//fetch call goes here
-	console.log('this is the delivery page');
-	res.render('order/delivery');
-});
+// app.get('/delivery', (req, res) => {
+// 	//fetch call goes here
+// 	console.log('this is the delivery page');
+// 	res.render('order/delivery');
+// });
 
 app.get('/deliveryUpdate', (req, res) => {
 	console.log('deliveryupdates page');
 	res.render('order/deliveryUpdate');
 });
+
+// app.get("/orderStatus", (req, res) =>{
+// 	res.render("order/orderStatus")
+// })
+
+
 
 app.post('/order/delivery', (req, res) => {
 	db.user
@@ -225,7 +231,7 @@ app.post('/order-meal-plans', (req, res) => {
 			}
 		})
 		.then((post) => {
-			res.redirect('/');
+			res.render('order/orderStatus', {msg: "Your order has been recieved! We will contact you within 48 hours to set up a pickup time!"})
 		})
 		.catch((error) => {
 			// res.status(400).render('error not found')
@@ -261,22 +267,22 @@ app.post('/order/delivery', (req, res) => {
 app.post('/order-smack-n-snack', (req, res) => {
 	console.log(req.body);
 	console.log(req.user);
+	let payload = {userId: req.user.id,
+		cheesecakeFlavor: req.body.cheesecakeFlavor,
+		slice: req.body.slice,
+		eight: req.body.eight,
+		ten: req.body.ten,
+		twelve: req.body.twelve,
+		granola: req.body.granola,
+		bbq: req.body.bbq
+	}
+	console.log(payload)
 	db.sOsOrder
 		.findOrCreate({
-			where: {
-				userId: req.user.dataValues.id,
-				days: req.body.days,
-				cheesecake: req.body.cheesecake,
-				slice: req.body.slice,
-				eight: req.body.eight,
-				ten: req.body.ten,
-				twelve: req.body.twelve,
-				granola: req.body.granola,
-				bbq: req.body.bbq
-			}
+			where: payload
 		})
 		.then((post) => {
-			res.redirect('/');
+			res.render('order/orderStatus', {msg: "Your order has been recieved! We will contact you within 48 hours to set up a pickup time!"})
 		})
 		.catch((error) => {
 			// res.status(400).render('error not found')
@@ -346,7 +352,7 @@ app.delete('/homepage', (req, res) => {
 });
 
 function sendMessage(distance) {
-	let msg;
+	let msg = "no distance entered";
 	if (distance < 15.9325) {
 		msg =
 			'Order Recieved! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery';
@@ -356,7 +362,7 @@ function sendMessage(distance) {
 	} else if (distance > 24.1402 && distance < 26.2) {
 		msg =
 			' Order Recieved! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery ';
-	} else {
+	} else if(distance>= 26.2){
 		msg =
 			"We are sorry, we don't currently deliver to this area. We will reach out to schedule a pick up time or to cancel your order.";
 	}

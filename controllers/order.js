@@ -11,7 +11,7 @@ router.get('/order-meal-plans', (req, res) => {
   router.get('/order-smack-n-snack', (req, res) => {
     res.render('order/orderSNS')
   })
-  router.get('order/delivery', (req, res) => {
+  router.get('/delivery', (req, res) => {
     //fetch call goes here
 
     res.render('order/delivery')
