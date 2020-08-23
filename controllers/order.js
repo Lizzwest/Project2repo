@@ -39,13 +39,13 @@ function sendMessage(distance) {
 	let msg = "no distance entered";
 	if (distance < 15.9325) {
 		msg =
-			'Order Recieved! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery';
+			'Order Received! You qualify for FREE delivery! We will reach out within 48 hours to confirm date and time of delivery';
 	} else if (distance < 24.1402 && distance > 15.9325) {
 		msg =
-			' Order Recieved! You qualify for $5 delivery! We will reach out within 48 hours to confirm date and time of delivery ';
+			' Order Received! You qualify for $5 delivery! We will reach out within 48 hours to confirm date and time of delivery ';
 	} else if (distance > 24.1402 && distance < 26.2) {
 		msg =
-			' Order Recieved! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery ';
+			' Order Received! You qualify for $10 delivery! We will reach out within 48 hours to confirm date and time of delivery ';
 	} else if(distance>= 26.2){
 		msg =
 			"We are sorry, we don't currently deliver to this area. We will reach out to schedule a pick up time or to cancel your order.";
