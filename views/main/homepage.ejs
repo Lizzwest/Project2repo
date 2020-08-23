@@ -1,34 +1,83 @@
-
-
+<h1 id="mainTitle"> Smack's&nbsp;'n&nbsp;Snacks ('n&nbsp;Sauce) </h1>
+<% if (!currentUser) { %>
 <div class="homeMain">
-<h3 class= "homepageHeader">
+
 </br>
 </br>
-    ...like most of us growing up in the 90’s,</br>
-     it was “everything but the kitchen sink”... 
-</h3>
-</div>
-<div class="homeRight">
+<h3 class= "homepageHeader"></h3>
+<img class="dylan"src="assets/images/dylan.JPG" alt=""></br>
+
+    "...like most of us growing up in the 90’s,</br>
+     it was “everything but the kitchen sink”..." 
+    </h3>
+<!-- </div> -->
+<!-- <div class="homeContainer">
+<div class="homeRight"> -->
     <h5 class= "describe">Guittard White Chocolate chips </br>
         folded into our house cheesecake </br>
         base, with a Golden Oreo Cookie Crust 
-    </br><img class="pie1"src="assets/images/whitechocchip.jpeg" alt=""></h5>
-    <a href="/smacks">Go to smacks</a></br>
-</h3>
-</div>
-<div class= "homeDown">
+    <img class="pie1"src="assets/images/whitechocchip.jpeg" alt="">
+    </br>
+    <a class  = "nonNav" href="/smacks">Go to smacks</a></h5>
+
+
+<!-- </div> -->
+<!-- <div class="homeRight"> -->
     <h5 class="describe">Boneless Pan Seared Chicken Breast </br>
         with Heirloom Carrots and Calrose White Rice
     </br><img class="mp1"src="assets/images/pansearedchicken.jpeg" alt="">
-    <a href="/mealplans">Go to mealplan</a></br>
+    <a class  = "nonNav" href="/mealplans">Go to mealplan</a></br>
+</h5>
+<!-- </div> -->
+<!-- <form method="POST" action="/homepage?_method=DELETE">
+    <input class= "inputFields" type="hidden" name="email" value="email" />
+    <button class= "submit" id= "delete"  type="submit">Delete account?</button>
+  </form> -->
+  <!-- </div>
+</div> -->
+</div>
+
+
+<!-- <a class  = "nonNav" hidden href="/owner-only">Owners Page</a>  -->
+
+<% }else{ %> 
+<div class="homeMain">
+
+</br>
+</br>
+<h3 class= "homepageHeader"></h3>
+<img class="dylan"src="assets/images/dylan.JPG" alt=""></br>
+
+    "...like most of us growing up in the 90’s,</br>
+     it was “everything but the kitchen sink”..." 
+    </h3>
+<!-- </div> -->
+<!-- <div class="homeContainer">
+<div class="homeRight"> -->
+    <h5 class= "describe">Guittard White Chocolate chips </br>
+        folded into our house cheesecake </br>
+        base, with a Golden Oreo Cookie Crust 
+    <img class="pie1"src="assets/images/whitechocchip.jpeg" alt="">
+    </br>
+    <a class  = "nonNav" href="/smacks">Go to smacks</a></h5>
+
+
+<!-- </div> -->
+<!-- <div class="homeRight"> -->
+    <h5 class="describe">Boneless Pan Seared Chicken Breast </br>
+        with Heirloom Carrots and Calrose White Rice
+    </br><img class="mp1"src="assets/images/pansearedchicken.jpeg" alt="">
+    <a class  = "nonNav" href="/mealplans">Go to mealplan</a></br>
 </h5>
 </div>
-<form method="POST" action="/homepage?_method=DELETE">
-    <input type="hidden" name="email" value="email" />
-    <button id= "delete"  type="submit">Delete account?</button>
+<!-- </div> -->
+<form class = "footer" method="POST" action="/homepage?_method=DELETE">
+    <input class= "inputFields" type="hidden" name="email" value="email" />
+    <button class= "submit footer" id= "delete"  type="submit">Delete account?</button>
   </form>
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 
+<% } %> 
 
-<a hidden href="/owner-only">Owners Page</a> 
+<!-- <a class  = "nonNav" hidden href="/owner-only">Owners Page</a>  -->

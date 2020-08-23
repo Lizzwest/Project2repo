@@ -1,52 +1,55 @@
 
-
+<div class="orderForm" id= "mpOrder">
 <h4>
     Meal Plan Options
-</h4>
+</h4></br>
 <h5>
-    $8 per day ($10/ day for salmon option; min. 3 days) OR get 5 days for $35($40 for salmon option)!
+    $8 per day ($10/ day for salmon option; min. 3 days) </br>
+    OR get 5 days for $35($40 for salmon option)!
 </h5>
 
-<p>For our meal plans, you can choose between 3 and 5 days. Please choose ONE protein for all days. For each day, you 
-    may also choose a side and a vegetable option. You may select different Sides and vegetable options for each day of your meal plan.
+<p>For our meal plans, you can choose between 3 and 5 days.</br>
+   Please choose ONE protein for all days. For each day, you </br>
+    may also choose a side and a vegetable option. You may </br>
+    select different Sides and vegetable options for each </br>
+    day of your meal plan.</br>
     Please make your selections below.
 </p>
 </br>
-<p>**Should we redirect to a full new order form for delivery or just have them enter their address and name on the delivery page so the chef can have it?</p>
 
 
 <form id="mealplan" action="/order-meal-plans" method="POST">
 
-<label class= "orderTitle" for="mpOrder">Place a Meal Plan Order</label> </br>
+<label class= "label" id= "orderTitle" for="mpOrder">Place a Meal Plan Order</label> </br>
 </br>
-    <label for="name">Customer Name</label>
-    <input class="input-fields" id="name" type="name" name="name" required></br>
-    <label for="email">E-mail</label>
-    <input class="input-fields" id="name" type="email" name="email" required></br>
-    <label for="phone">Phone Number</label>
-    <input class="input-fields" id="name" type="number" name="number"></br>
+    <label class = "label" for="name">Customer Name</label>
+    <input class="inputFields" id="name" type="name" name="name" required></br>
+    <label class = "label" for="email">E-mail</label>
+    <input class="inputFields" id="name" type="email" name="email" required></br>
+    <label class = "label" for="phone">Phone Number</label>
+    <input class="inputFields" id="name" type="number" name="number"></br>
 </br>
 </br>
    
 
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+    <!-- <input class="inputFields" id="name" type="name" name="name" required></br> -->
 
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+    <!-- <input class="inputFields" id="name" type="name" name="name" required></br> -->
 
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
+    <!-- <input class="inputFields" id="name" type="name" name="name" required></br> -->
 
-    <!-- <input class="input-fields" id="name" type="name" name="name" required></br> -->
-    <label for="days">Please select number of days</label>
-    <select name="days" required class= "input-fields">
+    <!-- <input class="inputFields" id="name" type="name" name="name" required></br> -->
+    <label class = "label" for="days">Please select number of days</label>
+    <select name="days" required class= "inputFields">
         <option value = "3">3</option>
         <option value = "4">4</option>
         <option value = "5">5</option>
       </select>
     </br>
 </br>
-    <label>Please Select ONE Protein</label>
+    <label class ="label">Please Select ONE Protein</label>
 </br>
-    <select name="protein" class="input-fields">
+    <select name="protein" class="inputFields">
       <option  value = "c">Oven Roasted Chicken Breast (8-10oz)</option>
       <option value = "pc">Pan Seared Chicken Breast (8-10oz)</option>
       <option value = "b">Beef Barbacoa (6oz)</option>
@@ -56,12 +59,12 @@
     </select>
 </br>
 </br>
-<label>Please select Sides and quantity:</label>
+<label class = "label">Please select Sides and quantity:</label>
 </br>
    
-      Tri-Color Herbed Pasta
+<label class = "label">Tri-Color Herbed Pasta</label> 
   
-    <select name="pasta" class= "input-fields">
+    <select name="pasta" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -71,9 +74,9 @@
       </select>
     </br>
       
-      Lemon Quinoa
+    <label class = "label">Lemon Quinoa</label>
    
-    <select name= "quinoa" class= "input-fields">
+    <select name= "quinoa" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -83,10 +86,10 @@
       </select>
     </br>
      
-      White Rice
+    <label class = "label">White Rice</label> 
     
    
-    <select name= "rice" class= "input-fields">
+    <select name= "rice" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -95,10 +98,10 @@
         <option value = "5">5</option>
       </select>
     </br>
-      Oven Roasted Potatoes
+    <label class = "label">Oven Roasted Potatoes</label>
     
    
-    <select name = "potatoes"class= "input-fields">
+    <select name = "potatoes"class= "inputFields">
       <option value="0">0</option>
       <option value = "1">1</option>
       <option value = "2">2</option>
@@ -109,12 +112,12 @@
 </br>
 </br>
 </br>
-<label>Please select Vegetables and quantity:</label>
+<label class = "label">Please select Vegetables and quantity:</label>
 </br>
    
-      Sautéed Asparagus
+<label class = "label">Sautéed Asparagus</label>
    
-    <select name="asparagus" class= "input-fields">
+    <select name="asparagus" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -123,8 +126,8 @@
         <option value = "5">5</option>
       </select>
     </br>
-     Oven Roasted Heirloom Carrots
-    <select name= "carrots" class= "input-fields">
+    <label class = "label">Oven Roasted Heirloom Carrots</label> 
+    <select name= "carrots" class= "inputFields">
       <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -133,8 +136,9 @@
         <option value = "5">5</option>
       </select>
     </br>
- Seasonal Vegetable Medley
-  <select name= "medley" class= "input-fields">
+ <label class = "label">Seasonal Vegetable Medley</label>
+ 
+  <select name= "medley" class= "inputFields">
     <option value="0">0</option>
       <option value = "1">1</option>
       <option value = "2">2</option>
@@ -145,6 +149,7 @@
       
 </br>
 </br>
-<input class="submit" type="submit" value="submit">
-<!-- <a href="/">Cancel</a> -->
+<input class="submit" type="submit" value="submit"></br>
+<a  class= "nonNav" href="/">Cancel</a>
 </form>
+</div>

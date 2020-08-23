@@ -1,21 +1,21 @@
 
+<div class="orderForm" id= "mpOrder">
 <form id="smacknsnack" action="/order-smack-n-snack" method="POST">
-
-<label class= "orderTitle" for="snsOrder">Place a Smack 'n Snack Order</label> 
+  <h4>Place a Smack 'n Snack Order</h4>
 </br>
 </br>
-    <label for="name">Customer Name</label>
-    <input class="input-fields" id="name" type="name" name="name" required></br>
-    <label for="email">E-mail</label>
-    <input class="input-fields" id="name" type="email" name="email" required></br>
-    <label for="phone">Phone Number</label>
-    <input class="input-fields" id="name" type="number" name="number"></br>
+    <label class = "label" for="name">Customer Name</label>
+    <input class="inputFields" id="name" type="name" name="name" required></br>
+    <label class = "label" for="email">E-mail</label>
+    <input class="inputFields" id="name" type="email" name="email" required></br>
+    <label class = "label" for="phone">Phone Number</label>
+    <input class="inputFields" id="name" type="number" name="number"></br>
    
 
 </br>
-<label>Cheesecake:
+<label class = "label">Cheesecake:
     </br> Please select flavor</label>
-    <select name = "cheesecakeFlavor" class="input-fields">
+    <select name = "cheesecakeFlavor" class="inputFields">
       <option value = "mnc">Milk 'n Cookies</option>
       <option value = "oc">Orange Creamsicle</option>
       <option value = "cnc">Cookies 'n Cream</option>
@@ -25,13 +25,13 @@
     </select>
   </br>
 </br>
-    <label>Please select a size and quantity:</label>
+    <label class = "label">Please select a size and quantity:</label>
   </br>
 </br>
     
 
-        Slice ($5)
-        <select name="slice" class= "input-fields">
+       <label class = "label">Slice ($5)</label> 
+        <select name="slice" class= "inputFields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -41,8 +41,8 @@
         </select>
       </br>
         
-       8 in. ($35)
-       <select name = "eight" class= "input-fields">
+      <label class = "label">8 in. ($35)</label> 
+       <select name = "eight" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -51,8 +51,8 @@
         <option value = "5">5</option>
       </select>
     </br>
-        10 in. ($40)
-        <select name = "ten" class= "input-fields">
+    <label class = "label">10 in. ($40)</label>
+        <select name = "ten" class= "inputFields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -61,8 +61,8 @@
           <option value = "5">5</option>
         </select>
       </br>
-        12 in. ($45)
-        <select name= "twelve" class= "input-fields">
+        <label class = "label">12 in. ($45)</label>
+        <select name= "twelve" class= "inputFields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -75,10 +75,10 @@
 </br>
 </br>
 </br>
-    <label>Granola (6 oz. Bag)</label>
-</br>
+    <label class = "label">Granola (6 oz. Bag)</label>
+
     
-    <select name= "granola" class= "input-fields">
+    <select name= "granola" class= "inputFields">
         <option value="0">0</option>
         <option value = "1">1</option>
         <option value = "2">2</option>
@@ -89,10 +89,10 @@
     </br>
   </br>
 </br>
-    <label>Chef's Special BBQ Sauce ($5/ bottle)</label>
-  </br>
+    <label class = "label">Chef's Special BBQ Sauce ($5/ bottle)</label>
+  
       
-      <select name= "bbq" class = "input-fields">
+      <select name= "bbq" class = "inputFields">
           <option value="0">0</option>
           <option value = "1">1</option>
           <option value = "2">2</option>
@@ -101,5 +101,7 @@
           <option value = "5">5</option>
         </select>
       </br>
-      <input class="submit" type="submit" value="submit">
+      <input class="submit" type="submit" value="submit"></br>
+      <a  class= "nonNav" href="/">Cancel</a>
       </form>
+      </div>
