@@ -11,7 +11,6 @@ const geocodingClient = mbxGeocoding({ accessToken: MAPBOX_ACCESS_TOKEN });
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
-//let moment = require('moment')
 
 //require the auth middleware at the top of the page
 
@@ -26,10 +25,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(layouts);
 app.use(
 	session({
-		//secret: what we give the user to use on our site/ session cookie
-		//resave: save the session even is its modified, make this false
-		//saveUninitialized: new session we save it, therefor,
-		//setting this to true
 		secret: SECRET_SESSION,
 		resave: false,
 		saveUninitialized: true
@@ -55,19 +50,20 @@ app.use((req, res, next) => {
 app.get('/profile', isLoggedIn, (req, res) => {
 	res.render('profile');
 });
+
 //helper functions
 Number.prototype.toRad = function() {
 	return this * Math.PI / 180;
 };
 
 function calculateDistanceToFarm(clientLat, clientLon) {
-	// -117.997072, 33.843075437500005
+	
 	var farmLat = 33.843075437500005;
 	var farmLon = -117.997072;
 	
 
 	var R = 6371; // km
-	//has a problem with the .toRad() method below.
+	
 	var x1 = farmLat - clientLat;
 	var dLat = x1.toRad();
 	var x2 = farmLon - clientLon;
@@ -80,7 +76,6 @@ function calculateDistanceToFarm(clientLat, clientLon) {
 	console.log(d);
 	return d;
 }
-
 
 
 function sendMessage(distance) {
@@ -100,24 +95,16 @@ function sendMessage(distance) {
 	}
 	return msg;
 }
-
+//require controller folders
 app.use('/auth', require('./controllers/auth'));
 app.use('/', require('./controllers/food'))
 app.use('/', require('./controllers/order'))
 app.use('/', require('./controllers/owner'))
 app.use('/', require('./controllers/main'))
 
-
-
-
 app.get('/owner-only', (req, res) => {
 	res.render('owner/orderInfo');
 });
-
-
-
-
-// Functions after the server
 
 
 app.delete('/homepage', (req, res) => {
