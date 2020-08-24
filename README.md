@@ -1,7 +1,7 @@
 # Smacks 'n Snacks
 
 This is a full stack application developed for a new business called Smacks 'n Snacks. Users can create an account, log in, place an order, check for delivery and, if needed, delete their account. Users can also update their address, to either allow for delivery to be within distance or due to a move.</br>
-The project is hosted on heroku here: https://smacks-n-snacks.herokuapp.com/  
+The project is hosted on heroku here: https://smacks-n-snacks-chef-d.herokuapp.com/  
 
 ## User Stories
 
