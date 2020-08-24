@@ -75,28 +75,28 @@ router.get('/order-meal-plans', (req, res) => {
     res.render('order/deliveryUpdate');
   });
 
-  router.post('/order/delivery', (req, res) => {
-    console.log(req.body, '----------');
-    console.log(req.user, '--------');
-    db.address
-      .findOrCreate({
-        where: {
-          userId: req.body.dataValues.id,
-          // email: req.body.email,
-          name: req.body.name,
-          address: req.body.address,
-          city: req.body.city,
-          zip: req.body.zip
-        }
-      })
-      .then((post) => {
-        res.redirect('/order/delivery');
-      })
-      .catch((error) => {
-        // res.status(400).render('error not found')
-        res.send(JSON.stringify(error));
-      });
-  });
+  // router.post('/order/delivery', (req, res) => {
+  //   console.log(req.body, '----------');
+  //   console.log(req.user, '--------');
+  //   db.address
+  //     .findOrCreate({
+  //       where: {
+  //         userId: req.user.dataValues.id,
+  //         email: req.body.email,
+  //         name: req.body.name,
+  //         address: req.body.address,
+  //         city: req.body.city,
+  //         zip: req.body.zip
+  //       }
+  //     })
+  //     .then((post) => {
+  //       res.redirect('/order/delivery');
+  //     })
+  //     .catch((error) => {
+  //       // res.status(400).render('error not found')
+  //       res.send(JSON.stringify(error));
+  //     });
+  // });
 
  router.post('/order/delivery', (req, res) => {
     db.user

@@ -244,6 +244,15 @@ border: 3px solid #be9b7b;
   text-align: center;
   
 }
+.error{
+  align-content: center;
+  text-align: center;
+}
+.orderS{
+  align-content: center;
+  text-align: center;
+  font-size: 25px;
+}
 /* .homeRight{ */
 
   /* align-items: right;

@@ -47,6 +47,8 @@ app.use((req, res, next) => {
 });
 
 
+
+
 app.get('/profile', isLoggedIn, (req, res) => {
 	res.render('profile');
 });
@@ -120,6 +122,9 @@ app.delete('/homepage', (req, res) => {
 		res.render('error');
 	}
 });
+app.get('*', function(req, res){
+	res.status(400).render('main/404')
+  });
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {

@@ -2,6 +2,13 @@
 
 This is a full stack application developed for a new business called Smacks 'n Snacks. Users can create an account, log in, place an order, check for delivery and, if needed, delete their account. Users can also update their address, to either allow for delivery to be within distance or due to a move.</br>
 The project is hosted on heroku here: https://smacks-n-snacks.herokuapp.com/  
+
+## User Stories
+
+- As a User, I want to be able to create an account and log in.
+- As a User, I want to be able to contact the owner.
+- As a User, I want to have a choice between delivery and pickup, and be able to update my delivery address as needed.
+- As a User, I want to be able to delete my account.
 ## What's included
 
 - Pre-developed Auth app to create authorization requirements for users.
